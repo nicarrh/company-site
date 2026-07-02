@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Altum Tech — Sitio web corporativo
 
-## Getting Started
+Sitio web corporativo de **Altum Tech**, empresa enfocada en transformación digital, desarrollo de software a medida y automatización con IA para PyMEs.
 
-First, run the development server:
+## Stack
+
+- Next.js 15+ (App Router)
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Framer Motion
+- React Hook Form + Zod
+- Resend (formulario de contacto)
+
+## Desarrollo local
+
+### Requisitos
+
+- Node.js 20+
+- npm
+
+### Instalación
+
+```bash
+git clone <repo-url> altum-tech
+cd altum-tech
+npm install
+cp .env.example .env.local
+```
+
+Configura las variables en `.env.local`:
+
+- `RESEND_API_KEY` — Obtén una en [resend.com](https://resend.com)
+- `CONTACT_EMAIL` — Email donde recibir contactos
+- `RESEND_FROM_EMAIL` — Usa `onboarding@resend.dev` en desarrollo
+
+### Ejecutar
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build de producción
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Estructura del proyecto
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/              # Rutas, layout, server actions
+├── components/
+│   ├── layout/       # Header, Footer, Logo
+│   ├── sections/     # Secciones de la landing
+│   ├── motion/       # Wrappers de animación
+│   └── ui/           # Componentes shadcn/ui
+├── content/          # Copy editable (español)
+└── lib/              # Utilidades y validaciones
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El contenido de cada sección vive en `src/content/` para facilitar ediciones sin tocar componentes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Despliegue en Vercel
 
-## Deploy on Vercel
+1. Sube el repositorio a GitHub
+2. Importa el proyecto en [vercel.com](https://vercel.com)
+3. Configura las variables de entorno:
+   - `NEXT_PUBLIC_SITE_URL`
+   - `RESEND_API_KEY`
+   - `CONTACT_EMAIL`
+   - `RESEND_FROM_EMAIL` (dominio verificado en producción)
+4. Deploy automático en cada push a `main`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Secciones
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Hero
+- Beneficios
+- Servicios
+- Industrias
+- Proceso de trabajo
+- Caso de éxito (EqusForce)
+- Tecnologías
+- FAQ
+- Contacto
+- Footer
+
+## Licencia
+
+Privado — Altum Tech © 2026
